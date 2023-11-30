@@ -1,0 +1,72 @@
+Deployment
+
+0 =-=-=-=- git init
+
+1 =-=-=-  npm run build
+
+creates a build directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served index.html, and requests to static paths like /static/js/main.<hash>.js are served with the contents of the /static/js/main.<hash>.js file.
+
+
+Building for Relative Paths
+By default, Create React App produces a build assuming your app is hosted at the server root.
+
+To override this, specify the homepage in your package.json, for example:
+
+GitHub Pages
+Note: this feature is available with react-scripts@0.2.0 and higher.
+
+Step 1: Add homepage to package.json
+The step below is important!
+
+If you skip it, your app will not deploy correctly.
+
+Open your package.json and add a homepage field for your project:
+
+2 =-=-=-=-=-    "homepage": "https://myusername.github.io/my-app",  
+
+now edit this url to this
+
+  "homepage": "https://ShameemAnsari3.github.io/2todoreactapp",
+
+
+
+Step 2: Install gh-pages and add deploy to scripts in package.json
+
+3 -=-=-=--=  npm install --save gh-pages
+
+
+
+Add the following scripts in your package.json:
+
+4 =-=-=-=-  "predeploy": "npm run build",
+	    "deploy": "gh-pages -d build",
+
+
+
+Step 3: Deploy the site by running npm run deploy
+5 -=-=-=- npm run deploy
+
+File sizes after gzip:
+
+  47.36 kB (+10 B)  build\static\js\main.11044f8f.js
+  1.78 kB           build\static\js\787.59e3c716.chunk.js
+  541 B             build\static\css\main.073c9b0a.css
+
+The project was built assuming it is hosted at /2todoreactapp/.   
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+
+
+
+6 =--==-=- git remote add 
+  git remote add origin https://github.com/ShameemAnsari3/2todoreactapp.git
+
+
+
+
